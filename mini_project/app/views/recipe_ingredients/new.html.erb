@@ -1,0 +1,8 @@
+<h1> New Recipe List: </h1>
+<%= form_for @recipe do |f| %>
+  <%= f.label :ingredient %>
+  <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+  <%= f.label :measurements %>
+  <%= f.integer_field :measurements %>
+  <%= f.submit "Submit Changes Recipe" %>
+<% end %>
